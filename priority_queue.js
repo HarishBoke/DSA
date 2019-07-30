@@ -75,6 +75,7 @@ q.enqueue('A fix here');
 q.enqueue('A bug there');
 q.enqueue('A new feature');
 console.log('Is Q emplty ',q.isEmpty());
+console.log('What is Q length ',q.length);
 
 console.log('log peek: ', q.peek());
 
