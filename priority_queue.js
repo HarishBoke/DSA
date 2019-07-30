@@ -70,9 +70,11 @@ function createPriorityQueue(){
 
 const  q = createPriorityQueue();
 
+console.log('Is Q emplty ',q.isEmpty());
 q.enqueue('A fix here');
 q.enqueue('A bug there');
 q.enqueue('A new feature');
+console.log('Is Q emplty ',q.isEmpty());
 
 console.log('log peek: ', q.peek());
 
@@ -82,4 +84,4 @@ console.log('dequeue Once! ');
 q.enqueue('Emergency Task!', true);
 console.log('log peek:' ,q.peek());
 
-
+console.log()
