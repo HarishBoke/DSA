@@ -18,7 +18,7 @@
 const inputArr = [3,6,8,12,14,17,25,29,31,35,42,47,54,55,62];
 let startIndex =  0;
 let endIndex = inputArr.length-1;
-const target = 42;
+const target = 30;
 let middle = Math.floor(startIndex+endIndex /2);
 
 function binarySearch(arr,  target, start, end){
