@@ -18,12 +18,16 @@
 const inputArr = [3,6,8,12,14,17,25,29,31,35,42,47,54,55,62];
 let startIndex =  0;
 let endIndex = inputArr.length-1;
-const target = 30;
+const target = 8;
 let middle = Math.floor(startIndex+endIndex /2);
 
 function binarySearch(arr,  target, start, end){
     console.log(`Arr: ${arr} \n target:${target} \n start: ${start} \n  end:${end}`);
     if(arr.length <= 0) {console.log('Arr length 0'); return arr[0];} 
+    if(start > end){
+        console.log(`Target ${target} not present in list`);
+        return 0;
+    }
 
     middle =  Math.floor((start + end) / 2);
     console.log(`middle is ${middle}`);
@@ -31,19 +35,18 @@ function binarySearch(arr,  target, start, end){
         console.log(`Target ${target} found at index ${middle}`);
         return arr[middle];
     }
-    else if(arr[middle] > target){
-        end =  middle - 1;
-        console.log(`end has changed to ${end}`);
-        binarySearch(arr, target, start, end);
-    }
     else if(arr[middle] < target){
         start = middle + 1;
         console.log(`start has changed to ${start}`);
         binarySearch(arr, target, start, end);
     }
-    else if(start > end){
-        console.log(`Target ${target} not present in list`);
+    else if(arr[middle] > target){
+        end =  middle - 1;
+        console.log(`end has changed to ${end}`);
+        binarySearch(arr, target, start, end);
     }
+     
+    
 }
 
 binarySearch(inputArr, target, startIndex, endIndex);
